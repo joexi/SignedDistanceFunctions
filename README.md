@@ -3,6 +3,8 @@
 
 This tutorial explains how to create complex 3D shapes inside volumetric shaders. **Signed Distance Functions** (often referred as **Fields**) are mathematical tools used to describe geometrical shapes such as sphere, boxes and tori. Compared to traditional 3D models made out of triangles, signed distance functions provide virtually **infinite resolution**, and are amenable to geometric manipulation. The following animation, from [formulanimation tutorial :: making a snail](https://www.youtube.com/watch?v=XuSnLbB1j6E), shows how a snail can be created using simpler shapes:
 
+[](https://github.com/joexi/SignedDistanceFunctions/blob/master/a74cc1b8-890d-4ebd-b1a2-4837dda9c66f.png)
+
  本片教程介绍了如何在体积着色器中创建复杂的三维模型。**有向距离函数**（通常被称为**场**）是用来描述球形，盒子和环面的几何形状的数学工具。和传统的由三角形组成的3D模型相比，有向距离函数提供了几乎**无限的分辨率**，并且适合进行计划操作。下面的动画来自于[动画教程：制作一个蜗牛](https://www.youtube.com/watch?v=XuSnLbB1j6E)，展示了如何使用更简单的形状去创建一个蜗牛。
 
 * Introduction
@@ -99,6 +101,7 @@ float map (float3 p)
 The result can be seen in the following picture (which also features few other visual enhancements that will be discussed in the next post on [Ambient Occlusion](http://www.alanzucconi.com/2016/07/01/ambient-occlusion/)):
 结果可以在下面的图片中看到（它还具有其他视觉增强功能，将在下一次关于[环境遮挡](http://www.alanzucconi.com/2016/07/01/ambient-occlusion/)的帖子里讨论）
 
+[](https://github.com/joexi/SignedDistanceFunctions/blob/master/24ff4d34-856c-4ccb-a839-6cf05947c433.png)
 
 With the same reasoning, it’s easy to see that taking the maximum value between two SDFs returns their intersection:
 因为同样的原因，显而易见的获取两个SDF的最大值则返回了他们的交集。
@@ -112,6 +115,8 @@ float map (float3 p)
         );
 }
 ```
+
+[](https://github.com/joexi/SignedDistanceFunctions/blob/master/177f8918-4805-4149-9699-89914fa75d8c.png)
 
 ##  SDF Box
 ##  SDF 盒子
@@ -157,6 +162,8 @@ float sdf_box (float3 p, float3 c, float3 s)
     return d;
 }
 ```
+
+[](https://github.com/joexi/SignedDistanceFunctions/blob/master/f28ffff7-4b77-4008-8579-0827b7bcc304.png)
 
 There are more compact (yet less precise) ways to create a box, which take advantage of the symmetries around the centre:
 有更简洁（但不够精确）的方法来创建一个盒子，利用了中心周围的对称性。
